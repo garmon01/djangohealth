@@ -1,0 +1,23 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Disorders</title>
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+    <body>
+        <h1>Welcome to the Disorder Page</h1>
+        <p>This is the Disorder page for Gordon Behavioral Health of La Mesa</p>
+        
+        <div class = "disorders">
+            {% for disorder in disorders %}
+                <div class ="disorder">
+                   <h2><a href = "#">{{disorder.title}}</a></h2> 
+                    <p>{{disorder.snippet}}</p>
+                </div>
+           {% endfor %}
+        </div>
+    </body>
+</html>
