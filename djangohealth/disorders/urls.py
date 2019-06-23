@@ -17,8 +17,10 @@ Including another URLconf
 from django.urls import path
 from .import views
 
+app_name = 'disorders'
 
 urlpatterns = [
-    path('', views.disorders_list, name='disorders_list'),
+    path('', views.disorders_list, name='list'),
+    path('<slug>', views.disorders_detail, name='detail'),
    
 ]
